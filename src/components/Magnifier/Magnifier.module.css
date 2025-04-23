@@ -1,0 +1,177 @@
+.container {
+  position: relative;
+
+  width: 800px;
+  padding: 24px;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+
+  border-radius: 80px;
+  background: #262626;
+
+  box-shadow: 10.24px 8.533px 21.333px 5.12px rgba(0, 0, 0, 0.4),
+    -20.48px 3.413px 17.067px 5.973px #000000 inset,
+    11.093px 0px 17.067px 0px rgba(255, 255, 255, 0.25) inset;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  border-radius: 68px;
+  border: 1.71px solid #fff;
+
+  filter: blur(3.5px);
+}
+.imgContainer {
+  position: relative;
+}
+.imgContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  box-shadow: 0px 0px 16.4px 0px #202020 inset;
+  border-radius: 64px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 64px;
+}
+
+.lens {
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+
+  z-index: 10;
+
+  box-shadow: -4px 2px 4px 0px rgba(255, 255, 255, 0.25),
+    4px -2px 4px 0px rgba(0, 0, 0, 0.25),
+    4px -2px 19.5px 1px rgba(255, 255, 255, 0.5) inset,
+    -4px 2px 9.8px 1px rgba(0, 0, 0, 0.75) inset;
+  position: relative;
+}
+.lensContainer {
+  position: relative;
+  padding: 16px;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background-color: #262626;
+  width: 182px;
+  height: 182px;
+  box-shadow: 4px 3px 7.07px 2px rgba(0, 0, 0, 0.4),
+    -7px 1.5px 6px 2.2px #131313 inset,
+    4px 0px 6px 0px rgba(255, 255, 255, 0.25) inset;
+
+  z-index: 3;
+}
+
+/* light ring around lens container */
+.lensContainer::after {
+  position: absolute;
+  content: "";
+  left: 8px;
+  right: 8px;
+  top: 8px;
+  bottom: 8px;
+  border-radius: 50%;
+  border: 0.5px solid #fff;
+
+  filter: blur(2.5px);
+}
+
+/* adds shadow inside lens */
+.lensContainer::before {
+  position: absolute;
+  content: "";
+  left: 16px;
+  right: 16px;
+  top: 16px;
+  bottom: 16px;
+  border-radius: 50%;
+  box-shadow: -4px 2px 4px rgba(255, 255, 255, 0.25),
+    4px -2px 4px rgba(0, 0, 0, 0.25),
+    inset 4px -2px 19.5px rgba(255, 255, 255, 0.5),
+    inset -4px 2px 9.8px rgba(0, 0, 0, 0.75);
+  z-index: 12;
+}
+
+.magnifier {
+  position: absolute;
+
+  display: flex;
+  flex-flow: column;
+  flex-wrap: nowrap;
+  z-index: 10;
+}
+
+.glare {
+  width: 83.697px;
+  height: 66.99px;
+  position: absolute;
+  right: 32px;
+  top: 24px;
+  z-index: 50;
+  opacity: 50%;
+}
+.handle {
+  position: absolute;
+  top: calc(150px + 32px - 2px);
+  left: 91px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  transform-origin: 50% -91px;
+  transform: translateX(-50%) rotate(-45deg);
+}
+.handle > div:first-child {
+  width: 24px;
+  height: 64px;
+  background-color: #262626;
+  box-shadow: -4px 2px 4px 0px rgba(0, 0, 0, 0.25) inset,
+    4px -2px 4px 0px rgba(255, 255, 255, 0.25) inset,
+    -1px 5px 7.07px 2px rgba(0, 0, 0, 0.4);
+}
+.handle > div:last-child {
+  height: 124px;
+  width: 42px;
+  align-self: stretch;
+  border-radius: 16px 16px 100px 100px;
+
+  background-color: #262626;
+  box-shadow: -4px 2px 4px 0px rgba(0, 0, 0, 0.25) inset,
+    4px -2px 4px 0px rgba(255, 255, 255, 0.25) inset,
+    -1px 5px 7.07px 2px rgba(0, 0, 0, 0.4);
+}
+
+.lensCanvas {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  box-shadow: -4px 2px 4px rgba(255, 255, 255, 0.25),
+    4px -2px 4px rgba(0, 0, 0, 0.25),
+    inset 4px -2px 19.5px rgba(255, 255, 255, 0.5),
+    inset -4px 2px 9.8px rgba(0, 0, 0, 0.75);
+  z-index: 10;
+  position: relative;
+}

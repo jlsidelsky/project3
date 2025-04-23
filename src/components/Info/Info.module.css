@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+  align-items: start;
+  text-align: left;
+}
+.text {
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
+}

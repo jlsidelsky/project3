@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  box-sizing: border-box;
+  width: 64px;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  align-self: stretch;
+  aspect-ratio: 1/1;
+
+  border-radius: 12px;
+
+  box-shadow: -0.8px 0.8px 1.6px 0px rgba(255, 255, 255, 0.75) inset;
+  cursor: pointer;
+  transform: translate(0, 0);
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  padding: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1 0 0;
+  align-self: stretch;
+
+  border-radius: 80px;
+
+  box-shadow: 6.4px -6.4px 11.2px 0px rgba(255, 255, 255, 0.4) inset,
+    -4.8px 4.8px 15.2px 0px rgba(0, 0, 0, 0.25) inset;
+  filter: blur(1.6px);
+}
+.img {
+  position: absolute;
+  width: 24px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inActive {
+  transform: translate(-1.5px, -1.5px);
+
+  box-shadow: -0.8px 0.8px 1.6px 0px rgba(255, 255, 255, 0.75) inset,
+    -2.4px 4.8px 19.2px 0px rgba(0, 0, 0, 0.2),
+    14.4px 3.2px 17.6px 0px rgba(0, 0, 0, 0.24),
+    -14.4px 3.2px 25.6px 0px rgba(0, 0, 0, 0.6);
+}
+
+.inActive:hover {
+  transform: translate(-1px, -1px);
+
+  box-shadow: -0.8px 0.8px 1.6px 0px rgba(255, 255, 255, 0.75) inset,
+    -2.4px 4.8px 19.2px 0px rgba(0, 0, 0, 0.2),
+    14.4px 3.2px 17.6px 0px rgba(0, 0, 0, 0.24),
+    -14.4px 3.2px 25.6px 0px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes click {
+  from {
+    transform: translate(-1px, -1px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
